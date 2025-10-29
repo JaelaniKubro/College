@@ -1,0 +1,1530 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+:root {
+    --primary-color: #da4f3f;
+    --secondary-color: #2d3359;
+    --accent-color: #ff9800;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.pexels.com/photos/34237589/pexels-photo-34237589.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn:hover {
+    background-color: #d81b60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn.secondary {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.hero-btn.secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.hero-buttons2 {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-btn2 {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #198754;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn2:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn2.secondary {
+    background-color: transparent;
+    border: 2px solid #198754;
+}
+
+.hero-btn2.secondary:hover {
+    background-color: #198754;
+    color: white;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-menu a {
+        padding: 15px 20px;
+    }
+    
+    .submenu {
+        position: static;
+        display: none;
+        box-shadow: none;
+    }
+    
+    .nav-menu li:hover .submenu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .parallax-section h2 {
+        font-size: 2rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .price-tag {
+        font-size: 2rem;
+    }
+    
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 70vh;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        line-height: 1.3;
+        padding: 0 10px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        white-space: normal;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .event-item {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .hero-btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* footer.css */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 25px 0;
+}
+
+.nav-menu li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu .submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.nav-menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu a {
+    padding: 10px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.submenu a:hover {
+    background-color: #f8f9fa;
+}
+
+.booking-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.booking-btn:hover {
+    background-color: #d81b60;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+    
+.mobile-menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+/* footer.css - Footer Specific Styles */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+/* components.css - Component Styles */
+/* Card Grid Layout - Ponorogo Style */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card-component {
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-component:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-component:hover .card-img-container img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+    line-height: 1.3;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.card-meta i {
+    margin-right: 5px;
+}
+
+.card-category {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tiket Online Section - Ponorogo Style */
+.ticket-section {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.ticket-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.ticket-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.ticket-card {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.ticket-header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.ticket-body {
+    padding: 30px;
+}
+
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.price-tag span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.ticket-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.ticket-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.ticket-features li:last-child {
+    border-bottom: none;
+}
+
+.ticket-features li i {
+    color: var(--success-color);
+    margin-right: 10px;
+}
+
+.ticket-form .form-group {
+    margin-bottom: 20px;
+}
+
+.ticket-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.ticket-form .form-control {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.ticket-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.event-calendar {
+    background-color: var(--light-color);
+    padding: 60px 0;
+}
+
+.calendar-highlight {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.event-item {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.event-date {
+    background-color: var(--primary-color);
+    color: white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 0.9rem;
+}
+
+.event-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.parallax-section {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+}
+
+.parallax-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.map-section {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 60px 0;
+}
+
+.map-container {
+    overflow: hidden;
+    height: 400px;
+}
+
+.modal-content {
+    overflow: hidden;
+}
+
+.modal-header {
+    background: var(--secondary-color);
+    color: white;
+    border-bottom: none;
+}
+
+.ticket-confirmation {
+    text-align: center;
+    padding: 20px;
+}
+
+.ticket-confirmation i {
+    font-size: 4rem;
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+.ticket-details {
+    background: #f8f9fa;
+    padding: 20px;
+    margin: 20px 0;
+}  
+
+/* Breadcrumb Styles */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+}
+
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Tiket Parallax Styles */
+.ticket-parallax-hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.parallax-bg-ticket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(45, 51, 89, 0.8), rgba(218, 79, 63, 0.8)), 
+                url('https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.parallax-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.parallax-hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.parallax-hero-content p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Ticket Booking Section dengan Parallax */
+.ticket-booking-section {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.parallax-bg-booking {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 42, 108, 0.9), rgba(178, 31, 31, 0.9), rgba(253, 187, 45, 0.9));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.ticket-booking-card {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.booking-card-header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.booking-card-header h3 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.booking-card-body {
+    padding: 40px;
+}
+
+.price-highlight {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.price-tag {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.price-tag span {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.price-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+}
+
+.feature-item span {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+/* Form Styles untuk Tiket */
+.ticket-booking-form {
+    margin-top: 30px;
+}
+
+.form-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--secondary-color);
+}
+
+.form-group label i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.form-control {
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(218, 79, 63, 0.25);
+}
+
+.booking-summary {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 5px solid var(--primary-color);
+}
+
+.booking-summary h5 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.summary-total {
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: none;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.security-note {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.security-note i {
+    color: var(--success-color);
+}
+
+/* Info Section Styles */
+.info-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--primary-color);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.info-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.info-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-content ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.info-content ul li i {
+    color: var(--success-color);
+    margin-right: 10px;
+    width: 20px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Responsive Design untuk Tiket */
+@media (max-width: 768px) {
+    .ticket-parallax-hero {
+        height: 300px;
+    }
+    
+    .parallax-hero-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .parallax-hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .form-row-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-card-body {
+        padding: 25px;
+    }
+    
+    .price-tag {
+        font-size: 2.5rem;
+    }
+    
+    .ticket-booking-section {
+        padding: 50px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .ticket-parallax-hero {
+        height: 250px;
+    }
+    
+    .parallax-hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .booking-card-header {
+        padding: 20px;
+    }
+    
+    .booking-card-header h3 {
+        font-size: 1.4rem;
+    }
+    
+    .price-tag {
+        font-size: 2rem;
+    }
+}
+
+/* Nonaktifkan parallax pada mobile untuk performa */
+@media (max-width: 768px) {
+    .parallax-bg-ticket,
+    .parallax-bg-booking {
+        background-attachment: scroll;
+    }
+} 
+
+.login-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.login-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    padding: 15px;
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.login-dropdown-wrapper:hover .login-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Arrow indicator */
+.login-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.05);
+}
+
+.dropdown-item-custom {
+    display: block;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.dropdown-item-custom:hover {
+    background: #f8f9fa;
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.dropdown-item-custom i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item-custom:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-divider-custom {
+    margin: 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.dropdown-header-custom {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Animasi untuk item */
+.login-dropdown-wrapper:hover .dropdown-item-custom:nth-child(1) {
+    animation: slideInRight 0.3s ease 0.1s both;
+}
+
+.login-dropdown-wrapper:hover .dropdown-item-custom:nth-child(3) {
+    animation: slideInRight 0.3s ease 0.2s both;
+}
+
+.login-dropdown-wrapper:hover .dropdown-item-custom:nth-child(5) {
+    animation: slideInRight 0.3s ease 0.3s both;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-dropdown-menu {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    
+    .login-dropdown-wrapper:hover .login-dropdown-menu {
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    .login-dropdown-menu::before {
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+    }
+}
+
+.menu-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background: #fff;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin: 60px auto;
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.menu-detail img {
+    width: 100%;
+    max-width: 350px;
+    object-fit: cover;
+    margin-right: 30px;
+}
+
+.menu-detail-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.menu-detail-content h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.menu-detail-content p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.menu-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #198754;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-btns {
+    margin-top: 20px;
+}
+
+.menu-btns button {
+    background-color: #198754;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btns button:hover {
+    background-color: #157347;
+    transform: translateY(-3px);
+}
+
+.menu-btns .back-btn {
+    background-color: #0d6efd;
+    margin-left: 10px;
+}
+
+.menu-btns .back-btn:hover {
+    background-color: #0b5ed7;
+}
+
+.menu-detail img {
+  transition: transform 0.3s ease;
+}
+
+.menu-detail img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px; /* Mengecilkan semua teks dan elemen berbasis rem/em */
+    }
+
+    body {
+        padding: 0 8px;
+    }
+
+    .container {
+        padding: 0 10px;
+        max-width: 100%;
+    }
+
+    /* Kurangi jarak vertikal antar section */
+    section {
+        padding: 30px 0;
+    }
+
+    /* Card lebih kecil dan rapi */
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .card-component {
+        padding: 12px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 0.85rem;
+    }
+
+    /* Gambar lebih kecil dan proporsional */
+    .card-img-container {
+        padding-bottom: 60%;
+    }
+
+    img, .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Tombol mengecil dan lebih kompak */
+    .hero-btn, .hero-btn2, button, .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    /* Hero section lebih kecil */
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    /* Grid Pesanan lebih rapat */
+    .event-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .event-date {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+}
+
